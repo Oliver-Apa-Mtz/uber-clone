@@ -8,7 +8,8 @@ import { useDispatch } from 'react-redux'
 import { setDestination, setOrigin } from '../slices/navSlice'
 
 import NavOptions from '../components/NavOptions'
-import Toast from 'react-native-toast-message';
+import Toast from 'react-native-toast-message'
+import NavFavorites from '../components/NavFavorites'
 
 const HomeScreen = () => {
 
@@ -33,12 +34,12 @@ const HomeScreen = () => {
                         Buenas tardes, Oliver
                     </Text>
                 </View>
-                <NavOptions />
                 <GooglePlacesAutocomplete
                     styles={{
                         container: {
                             flex: 0,
-                            marginTop: 20
+                            marginTop: 20,
+                            marginBottom: 20
                         },
                         textInput: {
                             fontSize: 18,
@@ -59,10 +60,12 @@ const HomeScreen = () => {
                         key: GOOGLE_MAPS_APIKEY,
                         language: 'en'
                     }}
-                    placeholder="¿De donde viajas?"
+                    placeholder="Tu ubicación"
                     nearbyPlacesAPI="GooglePlacesSearch"
                     debounce={400}
                 />
+                <NavOptions />
+                <NavFavorites/>
             </View>
         </SafeAreaView>
     )

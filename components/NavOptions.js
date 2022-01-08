@@ -17,15 +17,9 @@ const data = [
     },
     {
         id: '456',
-        title: 'Comida',
+        title: 'Eats',
         image: 'https://links.papareact.com/28w',
         screen: 'EatsScreen'
-    },
-    {
-        id: '789',
-        title: 'Transito',
-        image: 'https://links.papareact.com/28w',
-        screen: 'ViewScreen'
     }
 ]
 
@@ -53,10 +47,10 @@ const NavOptions = () => {
                         onPress={() => {
                             !origin ? showToast() : navigation.navigate(item.screen)
                         }}
-                        style={[tw`p-2 m-2 w-25`,{ backgroundColor: '#FAF9F9', borderRadius: 10,}]}>
+                        style={[tw`p-6 m-2 w-30`,{ backgroundColor: '#FAF9F9', borderRadius: 10,}]}>
                         <View style={{alignItems: 'center'}}>
                             <Image 
-                                style={{ width: 60, height: 60, resizeMode: 'contain' }}
+                                style={{ width: 80, height: 80, resizeMode: 'contain' }}
                                 source={{ uri: item.image }}
                             />
                             <Text style={[tw`mt-1`, { textAlign: 'center' }]}>{item.title}</Text>
