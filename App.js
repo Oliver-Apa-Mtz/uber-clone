@@ -9,6 +9,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import HomeScreen from './screens/HomeScreen'
 import MapScreen from './screens/MapScreen'
+import EatsScreen from './screens/EatsScreen'
 
 export default function App() {
 
@@ -21,7 +22,7 @@ export default function App() {
 					<KeyboardAvoidingView 
 						behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
 						keyboardVerticalOffset={Platform.OS === 'ios' ? -64 : 0}
-						style={{ flex: 1}}>
+						style={{ flex: 1, backgroundColor: 'white'}}>
 						<Stack.Navigator>
 							<Stack.Screen
 								name="HomeScreen"
@@ -37,9 +38,15 @@ export default function App() {
 									headerShown: false,
 								}}
 							/>
+							<Stack.Screen 
+								name="EatsScreen"
+								component={EatsScreen}
+								options={{
+									headerShown: false,
+								}}
+							/>
 						</Stack.Navigator>
 					</KeyboardAvoidingView>
-					
 				</SafeAreaProvider>
 			</NavigationContainer>
 		</Provider>

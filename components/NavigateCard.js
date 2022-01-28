@@ -51,14 +51,15 @@ const NavigateCard = () => {
                 />
                 <NavFavorites/>
             </View>
-            <View style={tw`flex-row bg-white justify-evenly py-2`}>
-                <TouchableOpacity onPress={() => navigation.navigate('RideOptionsCard')} style={tw`flex flex-row bg-black justify-between w-24 px-4 py-3 rounded-full`}>
+            <View style={tw`flex-row bg-white justify-evenly px-10`}>
+                <TouchableOpacity onPress={() => navigation.navigate('RideOptionsCard')} style={tw`flex flex-row bg-black justify-center w-18 px-4 py-3 rounded-full`}>
                     <Icon name='car' type='font-awesome' color='white' size={16} />
-                    <Text style={tw`text-white text-center`}>Viajes</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={tw`flex flex-row justify-between w-24 px-4 py-3 rounded-full`}>
+                <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')} style={[tw`flex flex-row justify-center w-18 px-4 py-3 rounded-full`, {backgroundColor: '#FAF9F9'}]}>
+                    <Icon name='home' type='font-awesome' color='black' size={16} />
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('EatsScreen')} style={[tw`flex flex-row justify-center w-18 px-4 py-3 rounded-full`, {backgroundColor: '#FAF9F9'}]}>
                     <Icon name='fast-food-outline' type='ionicon' color='black' size={16} />
-                    <Text style={tw`text-center`}>Eats</Text>
                 </TouchableOpacity>
             </View>
         </SafeAreaView>
